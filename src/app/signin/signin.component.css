@@ -1,0 +1,57 @@
+.LoginCtrl {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding-right: 2px;
+}
+.input-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#click{
+    margin-left: 10px;
+    background: #0066A2;
+    font-size: 25px;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+#clear {
+    margin-left: 10px;
+    background: red;
+    font-size: 25px;
+    color: white;
+    border-style: outset;
+    border-color: red;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+#clear:hover, #click:hover{
+    cursor: pointer;
+    border: 2px solid black;
+    transition: .98s;
+    color: black;
+}
+
+
+#item {
+    border-style: outset;
+    border-color: #0066A2;
+    height: 40px;
+    width: 250px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+

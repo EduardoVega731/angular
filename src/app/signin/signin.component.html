@@ -1,0 +1,15 @@
+<p>SignIn Works</p>
+<div class="LoginCtrl">
+  <button id="login-google" type="button" (click)="authService.GoogleAuth()">
+    Log in with Google
+  </button>
+</div>
+<div *ngIf="authService.isLoggedIn">
+  <div>
+    <div class="input-submit">
+      <input id="item" type="text">
+      <button id="click" (click)="getText()">Submit</button>
+      <button id ="clear" (click)="clearAll()">Clear</button>
+    </div>
+  </div>
+</div>
