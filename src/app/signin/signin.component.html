@@ -1,10 +1,13 @@
-<p>SignIn Works</p>
-<div class="LoginCtrl">
-  <button id="login-google" type="button" (click)="authService.GoogleAuth()">
-    Log in with Google
-  </button>
-</div>
-<div *ngIf="authService.isLoggedIn">
+<ng-template #elseBlock>
+  <div class="LoginCtrl">
+    <button id="login-google" type="button" (click)="authService.GoogleAuth()">
+      Log in with Google
+    </button>
+  </div>
+</ng-template>
+
+<!-- if logged in, displays list, buttons, input, etc. -->
+<div *ngIf="authService.isLoggedIn; else elseBlock">
   <div>
     <div id="divs">
       <div id="todo">
@@ -21,9 +24,6 @@
       <button id="click" (click)="getText()">Submit</button>
       <button id ="clear" (click)="clearAll()">Clear</button>
     </div>
+    <div id="show"></div>
   </div>
 </div>
-
-<div id="show"></div>
-
-<button (click)="delItem(0)">tttt</button>

@@ -1,0 +1,13 @@
+#Username {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0 20px;
+}
+.LoginCtrl {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding-right: 2px;
+}

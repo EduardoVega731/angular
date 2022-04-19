@@ -2,16 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
+import { checkActionCode } from 'firebase/auth';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
-
-
-
 
   constructor(public authService: AuthService) { }
 
@@ -31,6 +29,7 @@ export class SigninComponent implements OnInit {
     this.saveItem();
     this.loadItem();
     this.showList();
+
   }
 
   saveItem() {
@@ -128,6 +127,6 @@ export class SigninComponent implements OnInit {
 //   login() {
 //     this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
 //   }
-//   logout() {
-//     this.auth.signOut();
-//   }
+  // logout() {
+  //   this.auth.signOut();
+  // }
