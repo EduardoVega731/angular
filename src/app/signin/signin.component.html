@@ -6,6 +6,16 @@
 </div>
 <div *ngIf="authService.isLoggedIn">
   <div>
+    <div id="divs">
+      <div id="todo">
+          <p>To-Do Count:</p>
+          <p id ="todo-count"></p>
+      </div>
+      <div id="done">
+          <p>Done Count:</p>
+          <p id = "done-count"></p>
+      </div>
+  </div>
     <div class="input-submit">
       <input id="item" type="text">
       <button id="click" (click)="getText()">Submit</button>
@@ -13,3 +23,7 @@
     </div>
   </div>
 </div>
+
+<div id="show"></div>
+
+<button (click)="delItem(0)">tttt</button>

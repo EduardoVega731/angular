@@ -6,10 +6,17 @@
     text-align: right;
     padding-right: 2px;
 }
-.input-submit {
+.input-submit, #show {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#show {
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    color: red;
 }
 
 #click{
@@ -53,5 +60,41 @@
     width: 250px;
     font: bold15px arial,sans-serif;
     text-shadow: none;
+}
+
+/* display for todo and done numbers in list */
+#divs {
+    display: flex;
+} 
+
+#todo, #done {
+    
+    margin: auto;
+    margin-top: -20px;
+    display: block;
+    max-width: 20%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    float: right;
+}
+
+
+
+#todo p:nth-child(1), #done p:nth-child(1){
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+}
+#todo p:nth-child(2), #done p:nth-child(2){
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    /* width: 100px; */
+}
+/* styling for list number colors */
+#todo-count, #done-count{
+    background-color:#0066A2;
+    height: 35px;
+    margin-top: -21px;
+    border: 1.5px solid #0066A2;
 }
 
