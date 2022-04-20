@@ -28,7 +28,9 @@ export class SigninComponent implements OnInit {
 
     this.saveItem();
     this.loadItem();
-    this.showList();
+
+    console.log(this.myList.length);
+   
 
   }
 
@@ -46,7 +48,7 @@ export class SigninComponent implements OnInit {
 
     this.saveItem();
     this.loadItem();
-    // showList();
+    
 
   }
 
@@ -56,30 +58,8 @@ export class SigninComponent implements OnInit {
     let b = JSON.parse(a);
     if (b == null) b = [];
     this.myList = b;
-
-    this.showList();
   }
-  showList() {
-    let ol: any = document.getElementById("show")
-    let h = '';
-    if (this.myList && this.myList.length) {
-      h = '<ol>\r\n';
-
-      for (let i: number = 0; i < this.myList.length; i++) {
-        let li = this.myList[i];
-        h +=
-          `<li class="text" style="color:${li.done ? "green" : "red"}; text-decoration: ${li.done ? "line-through" : "none"};"> <input class="todo-item" type="checkbox" id="don-btn" 
-          (click)="doneItem(${i})" ${li.done ? "checked" : ""}>`
-          + li.name +
-          `<span class="del-btn" (click)="console.log(this);delItem(${1})">&#9003</span>
-          </li> `;
-      }
-      h += `</ol>`;
-      ol.innerHTML = h;
-    } else {
-      ol.innerHTML = '';
-    }
-  }
+  
 
   doneItem(index: any) {
     let text: any = <HTMLElement><unknown>document.getElementsByClassName("text");
@@ -100,7 +80,7 @@ export class SigninComponent implements OnInit {
 
     this.saveItem();
     this.loadItem();
-    this.showList();
+    
   }
 }
 

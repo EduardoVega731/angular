@@ -11,19 +11,29 @@
   <div>
     <div id="divs">
       <div id="todo">
-          <p>To-Do Count:</p>
-          <p id ="todo-count"></p>
+        <p>To-Do Count:</p>
+        <p id="todo-count"></p>
       </div>
       <div id="done">
-          <p>Done Count:</p>
-          <p id = "done-count"></p>
+        <p>Done Count:</p>
+        <p id="done-count"></p>
       </div>
-  </div>
+    </div>
     <div class="input-submit">
       <input id="item" type="text">
       <button id="click" (click)="getText()">Submit</button>
-      <button id ="clear" (click)="clearAll()">Clear</button>
+      <button id="clear" (click)="clearAll()">Clear</button>
     </div>
-    <div id="show"></div>
+
+    <div id="show">
+      <ol>
+        <li *ngFor="let person of myList; let i = index">
+          <input id="don-btn" type="checkbox"> <!-- checkbox -->
+            {{ person.name }}
+          <span>&#9003;</span>  <!-- delete button -->
+        </li>
+      </ol>
+    </div>
+
   </div>
 </div>

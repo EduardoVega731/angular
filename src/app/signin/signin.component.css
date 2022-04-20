@@ -40,7 +40,6 @@
 #clear:hover, #click:hover{
     cursor: pointer;
     border: 2px solid black;
-    transition: .98s;
     color: black;
 }
 
@@ -90,3 +89,6 @@
     border: 1.5px solid #0066A2;
 }
 
+#don-btn {
+    cursor: pointer;
+}
