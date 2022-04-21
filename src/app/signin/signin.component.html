@@ -27,9 +27,9 @@
 
     <div id="show">
       <ol>
-        <li *ngFor="let person of myList; let i = index">
+        <li *ngFor="let todo of myList; let i = index">
           <input class="todo-item" id="don-btn" type="checkbox" (click)="doneItem(i)"> <!-- checkbox -->
-            {{ person.name }}
+            {{ todo.name }}
           <span id="del-btn" (click)=delItem(i)> &#9003; </span>  <!-- delete button -->
         </li>
       </ol>
