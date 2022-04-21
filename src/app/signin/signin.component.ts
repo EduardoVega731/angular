@@ -18,6 +18,7 @@ export class SigninComponent implements OnInit {
   ngOnInit() /*void*/ {
   }
   public myList = [] as any;
+  public check = [] as any;
 
   getText() {
     console.log(this.myList);
@@ -25,6 +26,7 @@ export class SigninComponent implements OnInit {
     x = x.value;
     // when submit, pushes input to array myList
     this.myList.push({ name: x, done: false });
+
 
     this.saveItem();
     this.loadItem();
@@ -37,6 +39,8 @@ export class SigninComponent implements OnInit {
   saveItem() {
     const a = JSON.stringify(this.myList);
     localStorage.setItem('TODO', a);
+    let d: any = <HTMLElement><unknown>document.getElementById("todo-count");
+    d.innerHTML = this.myList.length;
     // setData(DB_PATH + DEFAULT_TODO, this.myList);
   }
   // clears entire list
@@ -45,7 +49,7 @@ export class SigninComponent implements OnInit {
       this.myList.pop();
     }
     console.log("clear all button");
-
+    let d: any = <HTMLElement><unknown>document.getElementById("done-count"); d.innerHTML = this.myList.filter((item: { done: any; }) => item.done).length
     this.saveItem();
     this.loadItem();
     
@@ -62,21 +66,28 @@ export class SigninComponent implements OnInit {
   
 
   doneItem(index: any) {
-    let text: any = <HTMLElement><unknown>document.getElementsByClassName("text");
-    let checkboxes: any = <HTMLInputElement><unknown>document.getElementsByClassName('todo-item')
-    // https://www.designcise.com/web/tutorial/how-to-toggle-a-checkbox-using-javascript
-    this.myList[index].done = checkboxes[index].checked
 
+    let text: any = <HTMLElement><unknown>document.getElementsByClassName("text");
+    const checkboxes: any = document.getElementsByClassName('todo-item') as HTMLCollection | null;
+    // https://www.designcise.com/web/tutorial/how-to-toggle-a-checkbox-using-javascript
+    if(checkboxes[index].checked == true){
+      this.myList[index].done = true}
+    if(checkboxes[index].checked == false){
+      this.myList[index].done = false}
+  
     // condition ? true : false
-    text[index].style.color = checkboxes[index].checked ? "green" : "red";
-    text[index].style.textDecoration = checkboxes[index].checked ? "line-through" : "none";
+    //text[index].style.color = checkboxes[index].checked ? "green" : "red";
+    //text[index].style.textDecoration = checkboxes[index].checked ? "line-through" : "none";
     // https://stackoverflow.com/questions/32906887/remove-all-falsy-values-from-an-array
-    //let d: any = <HTMLInputElement><unknown>document.getElementById("done-count").innerHTML = myList.filter((item: { done: any; }) => item.done).length
+    let d: any = <HTMLElement><unknown>document.getElementById("done-count"); d.innerHTML = this.myList.filter((item: { done: any; }) => item.done).length
+    
     this.saveItem();
   }
+
   delItem(index: any) {
     this.myList.splice(index, 1);
     alert("Are you sure you want to delete this?");
+    let d: any = <HTMLElement><unknown>document.getElementById("done-count"); d.innerHTML = this.myList.filter((item: { done: any; }) => item.done).length
 
     this.saveItem();
     this.loadItem();
